@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[blazerId].hw8.html</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+
+    <script>
+        function rewardStudent() {
+            let grade = parseFloat(prompt("Fill in the student's numerical grade.:"));
+
+            if (isNaN(grade) || grade < 0 || grade > 100) {
+                console.error('Incorrect grade entered. Please enter a value ranging from 0 to 100.');
+                return;
+            }
+
+            let letterGrade;
+            if (grade >= 90 && grade <= 100) letterGrade = 'A';
+            else if (grade >= 80 && grade < 90) letterGrade = 'B';
+            else if (grade >= 70 && grade < 80) letterGrade = 'C';
+            else if (grade >= 60 && grade < 70) letterGrade = 'D';
+            else letterGrade = 'F';
+
+            let treat;
+            switch (letterGrade) {
+                case 'A':
+                    treat = 'Candy';
+                    break;
+                case 'B':
+                    treat = 'Apple';
+                    break;
+                case 'C':
+                    treat = 'Mint';
+                    break;
+                case 'D':
+                    treat = 'Pencil';
+                    break;
+                case 'F':
+                    treat = 'Awkward discussion with parents about the grade';
+                    break;
+            }
+
+            console.log(`Grade: ${grade}`);
+            console.log(`Letter Grade: ${letterGrade}`);
+            console.log(`Reward: ${treat}`);
+        }
+    </script>
+</head>
+
+<body onload="rewardStudent()">
+</body>
+
+</html>
